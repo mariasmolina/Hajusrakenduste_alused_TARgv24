@@ -1,0 +1,10 @@
+body{
+    font-family: sans-serif;
+}
+
+#jsondata {
+    height: 150px;
+    border: 1px solid black;
+    margin: 10px;
+    overflow: scroll;
+}

@@ -417,3 +417,4 @@ FodyWeavers.xsd
 *.msm
 *.msp
 /2_week/node_modules
+/4_week/node_modules

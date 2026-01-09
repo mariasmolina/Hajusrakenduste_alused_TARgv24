@@ -112,6 +112,7 @@ app.post("/api/logout", (req, res) => {
   }) 
 });
 
+
 app.get('/api/session', (req, res) => {
   if (req.session.userId) {
     res.json({

@@ -8,10 +8,11 @@ const profileUsername = document.getElementById('profileUsername')
 const profileUserId = document.getElementById('profileUserId')
 const profileSessionId = document.getElementById('profileSessionId')
 
+
 const loginForm = document.getElementById('loginForm')
 
 const hostPort = 3001
-const hostName = "http://localhost:" + hostPort
+const hostName = 'http://localhost:' + hostPort
 
 loginForm.addEventListener('submit', async (event) => {
     event.preventDefault()
@@ -33,7 +34,7 @@ loginForm.addEventListener('submit', async (event) => {
     //console.log('_username', _username, '_password', _password);
 
     try {
-        const response = await fetch('/api/login',
+        const response = await fetch('/api/login', 
         {
             method: "POST",
             headers: {
@@ -50,11 +51,13 @@ loginForm.addEventListener('submit', async (event) => {
         console.log('username', data.username);
         console.log('sessionID', data.sessionID);
         setTimeout(loadProfile(), 2000)
+        
 
     }
     catch (error)
     {}
 })
+
 
 async function loadProfile() {
     try {
@@ -68,7 +71,13 @@ async function loadProfile() {
             const data = await response.json()
             console.log('Data: ', data);
 
+            profileUserId.innerHTML = data.userId
+            profileUsername.innerHTML = data.username
+            profileSessionId.innerHTML = data.sessionID
+
             profileView.classList.remove('hidden')
+
+
 
         }
     } catch(error){
